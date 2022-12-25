@@ -39,12 +39,17 @@ Route::group(['middleware' => ['auth','cekUserRole:admin,guru,siswa']], function
 
 // route role user
 Route::group(['middleware' => ['auth','cekUserRole:admin']], function(){
-    // Route::get('/siswa',[SiswaController::class,'index']);
-    // Route::post('/siswa/create',[SiswaController::class,'create']);
-    Route::resource('/siswa',SiswaController::class);
-    Route::resource('/guru',GuruController::class);
-    // Route::get('/guru',[GuruController::class,'index']);
-    // Route::post('/guru/create',[GuruController::class,'create']);
+    Route::get('/siswa',[SiswaController::class,'index']);
+    Route::get('/siswa/create',[SiswaController::class,'create']);
+    Route::post('/siswa',[SiswaController::class,'store']);
+
+    // Route::get('/siswa/{id}/edit',[SiswaController::class,'edit']);
+    // Route::post('/siswa/{id}',[SiswaController::class,'update']);
+
+    Route::get('/guru',[GuruController::class,'index']);
+    Route::get('/guru/create',[GuruController::class,'create']);
+    Route::post('/guru',[GuruController::class,'store']);
+
     Route::get('/kelas-satu',[KelasController::class,'kelasSatu']);
     Route::get('/kelas-dua',[KelasController::class,'kelasDua']);
     Route::get('/kelas-tiga',[KelasController::class,'kelasTiga']);
