@@ -31,6 +31,16 @@ class KelasController extends Controller
         ]);
     }
 
+    public function kelasTiga()
+    {
+        //
+        $siswaById = Siswa::where('kelas_id', '=', 3)->get();
+        return view('data-siswa.data-siswa',[
+            'siswas' => $siswaById,
+        ]);
+    }
+
+
     /**
      * Show the form for creating a new resource.
      *

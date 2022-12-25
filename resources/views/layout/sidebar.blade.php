@@ -32,9 +32,9 @@
                         </a>
                         <div class="collapse" id="pagesCollapseAuth" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordionPages">
                             <nav class="sb-sidenav-menu-nested nav">
-                                <a class="nav-link" href="/siswa/kelas-satu">Data Siswa Satu</a>
-                                <a class="nav-link" href="/siswa/kelas-dua">Data Siswa Dua</a>
-                                <a class="nav-link" href="/siswa/kelas-tiga">Data Siswa Tiga</a>
+                                <a class="nav-link" href="/kelas-satu">Data Siswa Satu</a>
+                                <a class="nav-link" href="/kelas-dua">Data Siswa Dua</a>
+                                <a class="nav-link" href="/kelas-tiga">Data Siswa Tiga</a>
                                 
                             </nav>
                         </div>

@@ -39,12 +39,15 @@ Route::group(['middleware' => ['auth','cekUserRole:admin,guru,siswa']], function
 
 // route role user
 Route::group(['middleware' => ['auth','cekUserRole:admin']], function(){
-    Route::get('/siswa',[SiswaController::class,'index']);
-    Route::post('/siswa/create',[SiswaController::class,'create']);
-    Route::get('/guru',[GuruController::class,'index']);
-    Route::post('/guru/create',[GuruController::class,'create']);
-    Route::get('/siswa/kelas-satu',[KelasController::class,'kelasSatu']);
-    Route::get('/siswa/kelas-dua',[KelasController::class,'kelasDua']);
+    // Route::get('/siswa',[SiswaController::class,'index']);
+    // Route::post('/siswa/create',[SiswaController::class,'create']);
+    Route::resource('/siswa',SiswaController::class);
+    Route::resource('/guru',GuruController::class);
+    // Route::get('/guru',[GuruController::class,'index']);
+    // Route::post('/guru/create',[GuruController::class,'create']);
+    Route::get('/kelas-satu',[KelasController::class,'kelasSatu']);
+    Route::get('/kelas-dua',[KelasController::class,'kelasDua']);
+    Route::get('/kelas-tiga',[KelasController::class,'kelasTiga']);
     Route::get('/siswa/{id}/profile',[DaftarPelajaranSiswaController::class,'profile']);
     Route::post('/siswa/{id}/addnilai',[DaftarPelajaranSiswaController::class,'addNilai']);
     
