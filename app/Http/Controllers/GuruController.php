@@ -77,9 +77,13 @@ class GuruController extends Controller
      * @param  \App\Models\Guru  $guru
      * @return \Illuminate\Http\Response
      */
-    public function edit(Guru $guru)
+    public function edit(Guru $guru,$id)
     {
         //
+         return view('data-guru.edit-guru',[
+            'gurus' => Guru::find($id),
+            'kelas' => Kelas::all(),
+        ]);
     }
 
     /**
@@ -89,9 +93,11 @@ class GuruController extends Controller
      * @param  \App\Models\Guru  $guru
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Guru $guru)
+    public function update(Request $request, Guru $guru,$id)
     {
-        //
+        $gurus = Guru::find($id);
+        $gurus->update($request->all());
+        return redirect('/guru')->with('pesan','Data berhasil ditambahkan');
     }
 
     /**
@@ -100,8 +106,9 @@ class GuruController extends Controller
      * @param  \App\Models\Guru  $guru
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Guru $guru)
+    public function destroy(Guru $guru,$id)
     {
-        //
+        Guru::destroy($id);
+        return redirect('/guru');
     }
 }

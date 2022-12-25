@@ -30,8 +30,8 @@
                 <td>{{ $siswa->kelas->nama_kelas }}</td>
                 <td>{{ $siswa->jenis_kelamin }}</td>
                 <td>
-                    <a href="#" class="btn btn-warning">Edit</a>
-                    <form  class="d-inline" action="#" method="post">
+                    <a href="/siswa/{{$siswa->id}}/edit" class="btn btn-warning">Edit</a>
+                    <form  class="d-inline" action="/siswa/{{$siswa->id}}" method="post">
                         @method('delete')
                         @csrf
                         <button class="btn btn-danger" onclick="return confirm('Yakin ingin menghapus data ?')">Delete

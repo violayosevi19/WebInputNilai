@@ -21,15 +21,15 @@
                 </tr>
             </thead>
             <tbody>
-             @foreach($gurus as $guru)
-             <tr>
+               @foreach($gurus as $guru)
+               <tr>
                 <td>{{ $guru->nip }}</td>
                 <td>{{ $guru->nama_guru }}</td>
                 <td>{{ $guru->no_hp }}</td>
                 <td>{{ $guru->kelas->nama_kelas }}</td>
-                 <td>
-                    <a href="#" class="btn btn-warning">Edit</a>
-                    <form  class="d-inline" action="#" method="post">
+                <td>
+                    <a href="/guru/{{$guru->id}}/edit" class="btn btn-warning">Edit</a>
+                    <form  class="d-inline" action="/guru/{{$guru->id}}" method="post">
                         @method('delete')
                         @csrf
                         <button class="btn btn-danger" onclick="return confirm('Yakin ingin menghapus data ?')">Delete

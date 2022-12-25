@@ -78,9 +78,14 @@ class SiswaController extends Controller
      * @param  \App\Models\Siswa  $siswa
      * @return \Illuminate\Http\Response
      */
-    public function edit(Siswa $siswa)
+    public function edit(Siswa $siswa,$id)
     {
-        //
+        return view('data-siswa.edit-siswa',[
+            'siswas' => Siswa::find($id),
+            'gurus' => Guru::all(),
+            'users' => User::all(),
+            'kelas' => Kelas::all(),
+        ]);
     }
 
     /**
@@ -90,9 +95,12 @@ class SiswaController extends Controller
      * @param  \App\Models\Siswa  $siswa
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Siswa $siswa)
+    public function update(Request $request, Siswa $siswa,$id)
     {
-        //
+        $siswa = Siswa::find($id);
+        $siswa->update($request->all());
+        return redirect('/siswa')->with('pesan','Data berhasil ditambahkan');
+
     }
 
     /**
@@ -101,8 +109,9 @@ class SiswaController extends Controller
      * @param  \App\Models\Siswa  $siswa
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Siswa $siswa)
+    public function destroy(Siswa $siswa,$id)
     {
-        //
+        Siswa::destroy($id);
+        return redirect('/siswa');
     }
 }

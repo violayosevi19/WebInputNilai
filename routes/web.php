@@ -42,13 +42,15 @@ Route::group(['middleware' => ['auth','cekUserRole:admin']], function(){
     Route::get('/siswa',[SiswaController::class,'index']);
     Route::get('/siswa/create',[SiswaController::class,'create']);
     Route::post('/siswa',[SiswaController::class,'store']);
-
-    // Route::get('/siswa/{id}/edit',[SiswaController::class,'edit']);
-    // Route::post('/siswa/{id}',[SiswaController::class,'update']);
+    Route::get('/siswa/{id}/edit',[SiswaController::class,'edit']);
+    Route::put('/siswa/{id}/update',[SiswaController::class,'update']);
+    Route::delete('/siswa/{id}',[SiswaController::class,'destroy']);
 
     Route::get('/guru',[GuruController::class,'index']);
     Route::get('/guru/create',[GuruController::class,'create']);
-    Route::post('/guru',[GuruController::class,'store']);
+    Route::get('/guru/{id}/edit',[GuruController::class,'edit']);
+    Route::put('/guru/{id}/update',[GuruController::class,'update']);
+    Route::delete('/guru/{id}',[GuruController::class,'destroy']);
 
     Route::get('/kelas-satu',[KelasController::class,'kelasSatu']);
     Route::get('/kelas-dua',[KelasController::class,'kelasDua']);
