@@ -5,7 +5,7 @@
     <div class="card-header">
         <div><i class="fas fa-table me-1"></i>
         Daftar Siswa</div> 
-        @if(auth()->user()->role != 'siswa')
+        @if(auth()->user()->role == 'admin')
         <a href="/siswa/create"><i class="fa-solid fa-circle-plus"></i></a>
         @endif
     </div>

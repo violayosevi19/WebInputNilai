@@ -5,7 +5,9 @@
     <div class="card-header">
         <div><i class="fas fa-table me-1"></i>
         Daftar Guru</div> 
+        @if(auth()->user()->role == 'admin')
         <a href="/guru/create"><i class="fa-solid fa-circle-plus"></i></a>
+        @endif
     </div>
     <div class="card-body">
         <table id="datatablesSimple">

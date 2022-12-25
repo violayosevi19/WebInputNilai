@@ -15,7 +15,9 @@
                 </a>
                 <div class="collapse" id="collapseLayouts" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
                     <nav class="sb-sidenav-menu-nested nav">
+                        @if(auth()->user()->role != 'siswa')
                         <a class="nav-link" href="{{url('guru')}}">Data Guru</a>
+                        @endif
                         <a class="nav-link" href="{{url('siswa')}}">Data Siswa</a>
                     </nav>
                 </div>
@@ -32,9 +34,9 @@
                         </a>
                         <div class="collapse" id="pagesCollapseAuth" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordionPages">
                             <nav class="sb-sidenav-menu-nested nav">
-                                <a class="nav-link" href="/kelas-satu">Data Siswa Satu</a>
-                                <a class="nav-link" href="/kelas-dua">Data Siswa Dua</a>
-                                <a class="nav-link" href="/kelas-tiga">Data Siswa Tiga</a>
+                                <a class="nav-link" href="/kelas-satu">Kelas 1</a>
+                                <a class="nav-link" href="/kelas-dua">Kelas 2</a>
+                                <a class="nav-link" href="/kelas-tiga">Kelas 3</a>
                                 
                             </nav>
                         </div>
